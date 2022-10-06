@@ -61,3 +61,15 @@ algorithms:
     parameters:
       axis: "X"
 ```
+
+[//]: # (### Text Overlay)
+
+[//]: # (### Contrast)
+
+[//]: # (> Gain, Bias)
+
+[//]: # (### Blur)
+
+[//]: # (### Gamma Correction)
+
+[//]: # (### Histogram Equalization)

@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from typing import Callable
 
 
 class Window(tk.Tk):
@@ -24,3 +25,8 @@ class Window(tk.Tk):
     def open_input_folder_dialog(self):
         self.input_folder = tk.filedialog.askdirectory()
         self.input_folder_label.config(text=self.input_folder)
+
+    def set_process_button_click(self, process_button_callback: Callable[[str], None]):
+        process_button = tk.Button(self, text="Process", command=lambda: process_button_callback(
+            self.input_folder) if self.input_folder else None)
+        process_button.pack()
