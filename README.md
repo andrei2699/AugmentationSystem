@@ -8,6 +8,12 @@
 
 ### How to run
 
+#### Tests
+
+```shell
+python -m unittest
+```
+
 ## Algorithms
 
 ### Identity

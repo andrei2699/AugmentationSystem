@@ -17,5 +17,9 @@ class Algorithm:
     def get_name(self):
         return self.name
 
-    def get_parameters(self):
-        return self.parameters
+    def get_parameter(self, name: str):
+        for x in self.parameters:
+            if x.name == name:
+                return x.value
+
+        raise Exception('Parameter not found: ' + name)

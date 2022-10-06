@@ -1,9 +1,12 @@
+from pathlib import Path
 import os
+import cv2
 
 
 def ensure_path_exists(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
+    parent_path = Path(path).parent
+    if not os.path.exists(parent_path):
+        os.makedirs(parent_path)
 
 
 class FileWriter:
@@ -16,7 +19,6 @@ class FileWriter:
 
         ensure_path_exists(file_path)
 
-        with open(file_path, 'w') as f:
-            f.write(data)
+        cv2.imwrite(file_path, data)
 
         self.current_index += 1

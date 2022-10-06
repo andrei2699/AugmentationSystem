@@ -4,7 +4,8 @@ from src.fs.file_writer import FileWriter
 from src.gui.window import Window
 
 # Todo add a button to the window to open a dialog to select the input algorithm_settings_path
-algorithm_settings_path = "test/test_augmentation/test_data/identity_algorithm.yaml"
+algorithm_settings_path = "test/test_augmentation/test_data/text_overlay_algorithm.yaml"
+input_folder = "D:\Work\Scoala\Master Anul 1\FCV\Laborator\AugmentationSystemInput"
 
 
 def process_button_click(input_folder: str, settings_path: str):
@@ -23,7 +24,7 @@ def process_button_click(input_folder: str, settings_path: str):
 
 
 if __name__ == '__main__':
-    # process_button_click(input_folder, algorithm_settings_path)
-    window = Window()
-    window.set_process_button_click(lambda input_folder: process_button_click(input_folder, algorithm_settings_path))
-    window.mainloop()
+    process_button_click(input_folder, algorithm_settings_path)
+    # window = Window()
+    # window.set_process_button_click(lambda input_folder: process_button_click(input_folder, algorithm_settings_path))
+    # window.mainloop()
