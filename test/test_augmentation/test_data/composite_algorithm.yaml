@@ -1,0 +1,18 @@
+algorithms:
+  - name: "Composite"
+    parameters:
+      - name: algorithms
+        value:
+          - name: "TextOverlay"
+            parameters:
+              - name: text
+                value: "Some Text"
+          - name: "Identity"
+          - name: "Composite"
+            parameters:
+              - name: algorithms
+                value:
+                  - name: "TextOverlay"
+                    parameters:
+                      - name: text
+                        value: "Other Text"

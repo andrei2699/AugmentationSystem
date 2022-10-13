@@ -4,9 +4,15 @@
 
 ### Prerequisites
 
-### Installation
+```shell
+pip install -r requirements.txt
+```
 
 ### How to run
+
+```shell
+python main.py
+```
 
 #### Tests
 
@@ -33,13 +39,16 @@ Receives a list of algorithms and applies them sequentially.
 algorithms:
   - name: "Composite"
     parameters:
-      algorithms:
-        - name: "Flip"
-          parameters:
-            axis: "X"
-        - name: "Rotate"
-          parameters:
-            angleX: 45
+      - name: "algorithms"
+        value:
+          - name: "Flip"
+            parameters:
+              - name: "axis"
+                value: "X"
+          - name: "Rotate"
+            parameters:
+              - name: "angleX"
+                value: 45
 ```
 
 ### Rotate
