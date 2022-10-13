@@ -10,6 +10,7 @@ from src.augmentation.algorithms.greyscale import GreyscaleAlgorithm
 from src.augmentation.algorithms.identity import IdentityAlgorithm
 from src.augmentation.algorithms.pixel_transformation.brightness import BrightnessAlgorithm
 from src.augmentation.algorithms.pixel_transformation.contrast import ContrastAlgorithm
+from src.augmentation.algorithms.pixel_transformation.gamma_correction import GammaCorrectionAlgorithm
 from src.augmentation.algorithms.text_overlay import TextOverlayAlgorithm
 
 
@@ -57,5 +58,7 @@ def create_algorithm(name: str, parameters: List) -> Algorithm:
         return ContrastAlgorithm(parameters)
     if name == 'Brightness':
         return BrightnessAlgorithm(parameters)
+    if name == 'GammaCorrection':
+        return GammaCorrectionAlgorithm(parameters)
     else:
         raise Exception('Unknown algorithm: ' + name)

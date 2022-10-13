@@ -22,3 +22,13 @@ class TestPixelTransformationAlgorithmsSettings(unittest.TestCase):
         self.assertEqual(algorithm_settings.algorithms[0].name, 'Brightness')
         self.assertEqual(algorithm_settings.algorithms[0].parameters[0].name, 'bias')
         self.assertEqual(algorithm_settings.algorithms[0].parameters[0].value, 0.5)
+
+    def test_load_gamma_correction_algorithm(self):
+        algorithm_settings = load_algorithm_settings(
+            'test/test_augmentation/test_data/pixel_transformation/gamma_correction_algorithm.yaml')
+
+        self.assertEqual(len(algorithm_settings.algorithms), 1)
+        self.assertEqual(algorithm_settings.algorithms[0].name, 'GammaCorrection')
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[0].name, 'gamma')
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[0].value, 0.5)
+

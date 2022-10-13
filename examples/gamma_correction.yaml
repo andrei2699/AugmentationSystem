@@ -1,0 +1,15 @@
+algorithms:
+  - name: "Composite"
+    parameters:
+      - name: algorithms
+        value:
+          - name: "GammaCorrection"
+            parameters:
+              - name: gamma
+                value: 0.5
+          - name: "Clip"
+            parameters:
+              - name: min
+                value: 0.0
+              - name: max
+                value: 255.0
