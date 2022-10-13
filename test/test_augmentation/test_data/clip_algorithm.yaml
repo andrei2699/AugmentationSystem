@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Clip"
+    parameters:
+      - name: min
+        value: 0.0
+      - name: max
+        value: 255.0

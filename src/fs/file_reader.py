@@ -19,4 +19,4 @@ def combine_paths(path1, path2):
 
 def read_image(path):
     # pass
-    return cv2.imread(path, cv2.IMREAD_COLOR)
+    return cv2.imread(path, cv2.IMREAD_UNCHANGED)

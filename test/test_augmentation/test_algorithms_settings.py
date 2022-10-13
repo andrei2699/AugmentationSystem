@@ -12,6 +12,23 @@ class TestAlgorithmsSettings(unittest.TestCase):
         self.assertEqual(algorithm_settings.algorithms[0].name, 'Identity')
         self.assertEqual(len(algorithm_settings.algorithms[0].parameters), 0)
 
+    def test_load_grey_scale_algorithm(self):
+        algorithm_settings = load_algorithm_settings('test/test_augmentation/test_data/greyscale_algorithm.yaml')
+
+        self.assertEqual(len(algorithm_settings.algorithms), 1)
+        self.assertEqual(algorithm_settings.algorithms[0].name, 'Greyscale')
+        self.assertEqual(len(algorithm_settings.algorithms[0].parameters), 0)
+
+    def test_load_clip_algorithm(self):
+        algorithm_settings = load_algorithm_settings('test/test_augmentation/test_data/clip_algorithm.yaml')
+
+        self.assertEqual(len(algorithm_settings.algorithms), 1)
+        self.assertEqual(algorithm_settings.algorithms[0].name, 'Clip')
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[0].name, 'min')
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[0].value, 0)
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[1].name, 'max')
+        self.assertEqual(algorithm_settings.algorithms[0].parameters[1].value, 255)
+
     def test_load_text_overlay_algorithm(self):
         algorithm_settings = load_algorithm_settings('test/test_augmentation/test_data/text_overlay_algorithm.yaml')
 

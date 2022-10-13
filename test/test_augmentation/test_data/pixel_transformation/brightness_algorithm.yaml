@@ -1,0 +1,5 @@
+algorithms:
+  - name: "Brightness"
+    parameters:
+      - name: bias
+        value: 0.5

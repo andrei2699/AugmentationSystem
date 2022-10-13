@@ -22,7 +22,11 @@ python -m unittest
 
 ## Algorithms
 
-### Identity
+> For multiple examples see [examples](examples) and [test_data](test/test_augmentation/test_data) folders.
+
+### Miscellaneous
+
+#### Identity
 
 Receives the input and returns it.
 
@@ -31,7 +35,42 @@ algorithms:
   - name: "Identity"
 ```
 
-### Composite
+#### Clip
+
+Clips the input image between a minimum and maximum value.
+
+```yaml
+algorithms:
+  - name: "Clip"
+    parameters:
+      - name: "min"
+        value: 0.0
+      - name: "max"
+        value: 255.0  
+```
+
+#### Text Overlay
+
+Receives the input and returns it with a text overlay.
+
+```yaml
+algorithms:
+  - name: "TextOverlay"
+    parameters:
+      - name: "text"
+        value: "Hello World"
+```
+
+#### Greyscale
+
+Receives the input and returns it in greyscale.
+
+```yaml
+algorithms:
+  - name: "Greyscale"
+```
+
+#### Composite
 
 Receives a list of algorithms and applies them sequentially.
 
@@ -51,7 +90,35 @@ algorithms:
                 value: 45
 ```
 
-### Rotate
+### Pixel Transformation
+
+### Contrast
+
+Receives the input and returns it with a contrast applied.
+
+```yaml
+algorithms:
+  - name: "Contrast"
+    parameters:
+      - name: "gain"
+        value: 1.5
+```
+
+### Brightness
+
+Receives the input and returns it with a brightness applied.
+
+```yaml
+algorithms:
+  - name: "Brightness"
+    parameters:
+      - name: "bias"
+        value: 1.5
+```
+
+### Geometric Transformation
+
+#### Rotate
 
 Rotates the input image by a given angle.
 
@@ -77,11 +144,7 @@ algorithms:
       axis: "X"
 ```
 
-[//]: # (### Text Overlay)
-
-[//]: # (### Contrast)
-
-[//]: # (> Gain, Bias)
+[//]: # (TODO: add more parameters to TextOverlay)
 
 [//]: # (### Blur)
 

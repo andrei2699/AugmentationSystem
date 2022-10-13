@@ -1,0 +1,5 @@
+algorithms:
+  - name: "Contrast"
+    parameters:
+      - name: gain
+        value: 0.8

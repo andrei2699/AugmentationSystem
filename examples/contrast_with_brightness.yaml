@@ -1,0 +1,28 @@
+algorithms:
+  - name: "Identity"
+  - name: "Contrast"
+    parameters:
+      - name: gain
+        value: 0.8
+  - name: "Brightness"
+    parameters:
+      - name: bias
+        value: 50
+  - name: "Composite"
+    parameters:
+      - name: algorithms
+        value:
+          - name: "Contrast"
+            parameters:
+              - name: gain
+                value: 0.8
+          - name: "Brightness"
+            parameters:
+              - name: bias
+                value: 50
+          - name: "Clip"
+            parameters:
+              - name: min
+                value: 0.0
+              - name: max
+                value: 255.0

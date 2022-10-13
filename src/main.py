@@ -4,7 +4,8 @@ from src.fs.file_writer import FileWriter
 from src.gui.window import Window
 
 # Todo add a button to the window to open a dialog to select the input algorithm_settings_path
-algorithm_settings_path = "test/test_augmentation/test_data/text_overlay_algorithm.yaml"
+# algorithm_settings_path = "test/test_augmentation/test_data/text_overlay_algorithm.yaml"
+algorithm_settings_path = "examples/contrast_with_brightness.yaml"
 input_folder = "D:\Work\Scoala\Master Anul 1\FCV\Laborator\AugmentationSystemInput"
 
 
