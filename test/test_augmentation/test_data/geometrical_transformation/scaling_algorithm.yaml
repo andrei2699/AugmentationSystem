@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Scaling"
+    parameters:
+      - name: x
+        value: 1.25
+      - name: y
+        value: 1.6

@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Shearing"
+    parameters:
+      - name: x
+        value: 0.2
+      - name: y
+        value: 0.1

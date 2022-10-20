@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Flip"
+    parameters:
+      - name: vertical
+        value: true
+      - name: horizontal
+        value: false

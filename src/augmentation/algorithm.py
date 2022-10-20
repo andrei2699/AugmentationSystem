@@ -23,3 +23,10 @@ class Algorithm:
                 return x.value
 
         raise Exception('Parameter not found: ' + name)
+
+    def get_parameter_or_default(self, name: str, default):
+        for x in self.parameters:
+            if x.name == name:
+                return x.value
+
+        return default

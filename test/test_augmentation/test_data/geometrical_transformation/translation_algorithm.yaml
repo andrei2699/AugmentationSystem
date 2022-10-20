@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Translation"
+    parameters:
+      - name: x
+        value: 50
+      - name: y
+        value: 50

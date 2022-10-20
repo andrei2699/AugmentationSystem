@@ -6,6 +6,12 @@ from munch import Munch
 from src.augmentation.algorithm import Algorithm
 from src.augmentation.algorithms.clip import ClipAlgorithm
 from src.augmentation.algorithms.composite import CompositeAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.flip import FlipAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.resizing import ResizingAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.rotate import RotationAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.scaling import ScalingAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.shearing import ShearingAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.translation import TranslationAlgorithm
 from src.augmentation.algorithms.greyscale import GreyscaleAlgorithm
 from src.augmentation.algorithms.identity import IdentityAlgorithm
 from src.augmentation.algorithms.pixel_transformation.brightness import BrightnessAlgorithm
@@ -29,9 +35,9 @@ def load_algorithm_settings(file_path: str) -> AlgorithmsSettings:
         return AlgorithmsSettings(algorithms)
 
 
-def load_algorithms(initialAlgorithms: List[Algorithm]):
+def load_algorithms(initial_algorithms: List[Algorithm]):
     algorithms = []
-    for x in initialAlgorithms:
+    for x in initial_algorithms:
         name = x.name
         parameters = x.parameters if 'parameters' in x else []
 
@@ -43,6 +49,7 @@ def load_algorithms(initialAlgorithms: List[Algorithm]):
     return algorithms
 
 
+# TODO: maybe rethink a little bit the creation of algorithms
 def create_algorithm(name: str, parameters: List) -> Algorithm:
     if name == 'Composite':
         return CompositeAlgorithm(parameters)
@@ -60,5 +67,21 @@ def create_algorithm(name: str, parameters: List) -> Algorithm:
         return BrightnessAlgorithm(parameters)
     if name == 'GammaCorrection':
         return GammaCorrectionAlgorithm(parameters)
+    # TODO
+    # if name == 'BoxFilter':
+    #     return BoxFilterAlgorithm(parameters)
+    if name == 'Translation':
+        return TranslationAlgorithm(parameters)
+    if name == 'Resizing':
+        return ResizingAlgorithm(parameters)
+    if name == 'Scaling':
+        return ScalingAlgorithm(parameters)
+    if name == 'Shearing':
+        return ShearingAlgorithm(parameters)
+    if name == 'Flip':
+        return FlipAlgorithm(parameters)
+    if name == 'Rotation':
+        return RotationAlgorithm(parameters)
+
     else:
         raise Exception('Unknown algorithm: ' + name)

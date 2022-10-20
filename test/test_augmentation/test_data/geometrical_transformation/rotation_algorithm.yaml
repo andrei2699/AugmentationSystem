@@ -1,0 +1,9 @@
+algorithms:
+  - name: "Rotation"
+    parameters:
+      - name: angle
+        value: 45
+      - name: center
+        value:
+          x: 0.5
+          y: 0.5

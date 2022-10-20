@@ -92,7 +92,11 @@ algorithms:
 
 ### Pixel Transformation
 
-### Contrast
+[//]: # (TODO: Implement using opencv and compare performance)
+
+[//]: # (TODO: Add ClippedBrightness, ClippedContrast, and ClippedGamma)
+
+#### Contrast
 
 Receives the input and returns it with a contrast applied.
 
@@ -104,7 +108,7 @@ algorithms:
         value: 1.5
 ```
 
-### Brightness
+#### Brightness
 
 Receives the input and returns it with a brightness applied.
 
@@ -116,38 +120,134 @@ algorithms:
         value: 1.5
 ```
 
-### Geometric Transformation
+#### Gamma Correction
 
-#### Rotate
-
-Rotates the input image by a given angle.
-
-[//]: # (TODO: Describe the parameters in more details)
+Receives the input and returns it with a gamma correction applied.
 
 ```yaml
 algorithms:
-  - name: "Rotate"
+  - name: "GammaCorrection"
     parameters:
-      angleX: 90
+      - name: "gamma"
+        value: 1.5
 ```
 
-### Flip
+### Geometric Transformation
+
+#### Flip
 
 Flips the input image.
-
-[//]: # (TODO: Describe the parameters in more details)
 
 ```yaml
 algorithms:
   - name: "Flip"
     parameters:
-      axis: "X"
+      - name: "vertical"
+        value: true
+      - name: "horizontal"
+        value: false
 ```
+
+> Default values:
+> - vertical: False
+> - horizontal: False
+
+#### Translation
+
+Translates the input image. Parameters are in pixels.
+
+```yaml
+algorithms:
+  - name: "Translation"
+    parameters:
+      - name: "x"
+        value: 10
+      - name: "y"
+        value: 10
+```
+
+> Default values:
+> - x: 0
+> - y: 0
+
+#### Rotation
+
+Rotates the input image by a given angle in degrees around a center point.
+
+```yaml
+algorithms:
+  - name: "Rotation"
+    parameters:
+      - name: "angle"
+        value: 90
+      - name: center
+        value:
+          x: 0.5
+          y: 0.5
+```
+
+> Default values:
+> - angle: 0
+> - center: "image center"
+
+#### Shearing
+
+Shears the input image.
+
+```yaml
+algorithms:
+  - name: "Shearing"
+    parameters:
+      - name: "x"
+        value: 0.5
+      - name: "y"
+        value: 0.5
+```
+
+> Default values:
+> - x: 0
+> - y: 0
+
+#### Scaling
+
+Scales the input image. The image dimension will remain the same, but the content will be scaled
+
+```yaml
+algorithms:
+  - name: "Scaling"
+    parameters:
+      - name: "x"
+        value: 0.5
+      - name: "y"
+        value: 0.5
+```
+
+> Default values:
+> - x: 1
+> - y: 1
+
+#### Resizing
+
+Resizes the input image by a resize factor. The image dimension will change.
+
+```yaml 
+algorithms:
+  - name: "Resizing"
+    parameters:
+      - name: "x"
+        value: 100
+      - name: "y"
+        value: 100
+```
+
+> Default values:
+> - x: 1
+> - y: 1
 
 [//]: # (TODO: add more parameters to TextOverlay)
 
-[//]: # (### Blur)
+[//]: # (TODO add box filter)
 
-[//]: # (### Gamma Correction)
+[//]: # (### Blur)
 
 [//]: # (### Histogram Equalization)

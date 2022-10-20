@@ -1,0 +1,7 @@
+algorithms:
+  - name: "Resizing"
+    parameters:
+      - name: x
+        value: 0.8
+      - name: y
+        value: 1
