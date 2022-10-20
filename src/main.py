@@ -11,9 +11,8 @@ def process_button_click(input_folder: str, settings_path: str):
 
     file_writer = FileWriter(output_folder)
 
-    # TODO Check order of created files
-    for name, extension in get_files_with_extension(input_folder):
-        for algorithm in algorithm_settings.algorithms:
+    for algorithm in algorithm_settings.algorithms:
+        for name, extension in get_files_with_extension(input_folder):
             file_name = name + "_" + algorithm.get_name()
             image = read_image(combine_paths(input_folder, name + extension))
             image = image.astype(float)
