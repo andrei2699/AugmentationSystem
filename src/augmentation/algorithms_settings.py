@@ -7,6 +7,7 @@ from src.augmentation.algorithm import Algorithm
 from src.augmentation.algorithms.clip import ClipAlgorithm
 from src.augmentation.algorithms.composite import CompositeAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.flip import FlipAlgorithm
+from src.augmentation.algorithms.geometrical_transformation.low_level_translation import LowLevelTranslationAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.resizing import ResizingAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.rotate import RotationAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.scaling import ScalingAlgorithm
@@ -82,6 +83,8 @@ def create_algorithm(name: str, parameters: List) -> Algorithm:
         return FlipAlgorithm(parameters)
     if name == 'Rotation':
         return RotationAlgorithm(parameters)
+    if name == 'LowLevelTranslation':
+        return LowLevelTranslationAlgorithm(parameters)
 
     else:
         raise Exception('Unknown algorithm: ' + name)
