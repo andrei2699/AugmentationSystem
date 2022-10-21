@@ -71,3 +71,12 @@ class TestGeometricalTransformationAlgorithmsSettings(unittest.TestCase):
         self.assertEqual(algorithm_settings.algorithms[0].parameters[1].name, 'center')
         self.assertEqual(algorithm_settings.algorithms[0].parameters[1].value.x, 0.5)
         self.assertEqual(algorithm_settings.algorithms[0].parameters[1].value.y, 0.5)
+
+        def test_load_low_level_rotation_algorithm(self):
+            algorithm_settings = load_algorithm_settings(
+                'test/test_augmentation/test_data/geometrical_transformation/low_level_rotation_algorithm.yaml')
+
+            self.assertEqual(len(algorithm_settings.algorithms), 1)
+            self.assertEqual(algorithm_settings.algorithms[0].name, 'LowLevelRotation')
+            self.assertEqual(algorithm_settings.algorithms[0].parameters[0].name, 'angle')
+            self.assertEqual(algorithm_settings.algorithms[0].parameters[0].value, 45)
