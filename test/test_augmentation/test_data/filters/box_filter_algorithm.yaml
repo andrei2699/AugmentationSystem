@@ -1,0 +1,5 @@
+algorithms:
+  - name: "BoxFilter"
+    parameters:
+      - name: size
+        value: 3

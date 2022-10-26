@@ -61,6 +61,8 @@ algorithms:
         value: "Hello World"
 ```
 
+[//]: # (TODO: add more parameters to TextOverlay)
+
 #### Greyscale
 
 Receives the input and returns it in greyscale.
@@ -91,10 +93,6 @@ algorithms:
 ```
 
 ### Pixel Transformation
-
-[//]: # (TODO: Implement using opencv and compare performance)
-
-[//]: # (TODO: Add ClippedBrightness, ClippedContrast, and ClippedGamma)
 
 #### Contrast
 
@@ -130,6 +128,32 @@ algorithms:
     parameters:
       - name: "gamma"
         value: 1.5
+```
+
+### Filters
+
+#### Gaussian Blur
+
+Applies a Gaussian blur to the input image. The `size` parameter is the kernel size
+
+```yaml
+algorithms:
+  - name: "GaussianBlur"
+    parameters:
+      - name: "size"
+        value: 5
+```
+
+#### Box Filter
+
+Applies a box filter to the input image. The `size` parameter is the kernel size
+
+```yaml
+algorithms:
+  - name: "BoxFilter"
+    parameters:
+      - name: "size"
+        value: 5
 ```
 
 ### Geometric Transformation
@@ -243,11 +267,3 @@ algorithms:
 > Default values:
 > - x: 1
 > - y: 1
-
-[//]: # (TODO: add more parameters to TextOverlay)
-
-[//]: # (TODO add box filter)
-
-[//]: # (### Blur)
-
-[//]: # (### Histogram Equalization)

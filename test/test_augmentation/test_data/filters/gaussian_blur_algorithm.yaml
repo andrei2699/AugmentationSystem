@@ -1,0 +1,5 @@
+algorithms:
+  - name: "GaussianBlur"
+    parameters:
+      - name: size
+        value: 3

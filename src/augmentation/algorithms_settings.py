@@ -6,6 +6,8 @@ from munch import Munch
 from src.augmentation.algorithm import Algorithm
 from src.augmentation.algorithms.clip import ClipAlgorithm
 from src.augmentation.algorithms.composite import CompositeAlgorithm
+from src.augmentation.algorithms.filters.box_filter import BoxFilterAlgorithm
+from src.augmentation.algorithms.filters.gaussian_blur import GaussianBlurAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.flip import FlipAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.low_level_translation import LowLevelTranslationAlgorithm
 from src.augmentation.algorithms.geometrical_transformation.resizing import ResizingAlgorithm
@@ -68,9 +70,12 @@ def create_algorithm(name: str, parameters: List) -> Algorithm:
         return BrightnessAlgorithm(parameters)
     if name == 'GammaCorrection':
         return GammaCorrectionAlgorithm(parameters)
-    # TODO
-    # if name == 'BoxFilter':
-    #     return BoxFilterAlgorithm(parameters)
+
+    if name == 'BoxFilter':
+        return BoxFilterAlgorithm(parameters)
+    if name == 'GaussianBlur':
+        return GaussianBlurAlgorithm(parameters)
+
     if name == 'Translation':
         return TranslationAlgorithm(parameters)
     if name == 'Resizing':
